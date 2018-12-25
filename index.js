@@ -202,7 +202,7 @@ client.on('message', message => {
 
 client.on('message', message => {
 	if(message.content === "kais"){
-		message.channel.send("@here")
+		message.channel.send(".raid")
 		message.delete();
 		console.log("quelq'un à appeler kais")
 	}
@@ -379,7 +379,7 @@ client.on('message', message => {
 		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
 		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
 		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous etes fait violer bande de shlags @everyone")
+		message.channel.send(".raid")
 		message.delete()
 		console.log("-1 srv")
 	}
