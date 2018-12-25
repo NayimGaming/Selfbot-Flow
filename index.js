@@ -7,9 +7,16 @@ var token = 'NDE3MzUzOTYwMjI0MDYzNDg4.DwAJkA.iLgQoJCUbr-SeH_0okM4ofNpKKU';
 client.login(token);
 
 client.on('ready' , function (){
-	client.user.setActivity("Va encore être ban :rage: !")
+	client.user.setActivity("A coder !")
 	console.log("prêt frr")
 });
+
+client.on('message',function(message){
+	if(message.content.includes(prefix + 'stop')){
+		message.channel.send(` **au revoir les gars :cry:**`)
+		message.delete().then(client.destroy())
+	}
+})
 
 client.on('message' , message =>{
 		if(message.content === "tu fais quoi ?"){
