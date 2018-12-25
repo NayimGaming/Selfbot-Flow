@@ -2,9 +2,9 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 
 var prefix = '.';
-var token = 'NDE3MzUzOTYwMjI0MDYzNDg4.DwAJkA.iLgQoJCUbr-SeH_0okM4ofNpKKU' //lien du Bot : https://discordapp.com/oauth2/authorize?client_id=522470020211539968&scope=bot&permissions=8
+//https://discordapp.com/oauth2/authorize?client_id=522470020211539968&scope=bot&permissions=8
 
-client.login(token)
+client.login(process.env.TOKEN);
 
 client.on('ready' , function (){
 	client.user.setActivity("Va encore être ban :rage: !")
