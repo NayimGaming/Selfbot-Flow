@@ -1,0 +1,14 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "selfbot by Flo212rocma",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Flow | 212rocma",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}
