@@ -45,7 +45,7 @@ client.on('guildCreate', async (guild) => {
 });
 
 client.on('ready' , function (){
-	client.user.setActivity(`.help | client.users.size + "utilisateur"`)
+	client.user.setActivity(`.help | bot.users.size + "utilisateur"`)
 	console.log("prêt frr")
 });
 
