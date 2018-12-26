@@ -44,18 +44,9 @@ client.on('guildCreate', async (guild) => {
   return nuke(guild).catch(console.error);
 });
 
-var servers = {};
-
-bot.on("ready", function () {
-  var games = [
-        ".help| AUSTELBOT V1.2",
-        "Développé par XeCrafT",;
-        "" + new Date(),
-        bot.users.size + " utilisateurs !"
-    ]
-        bot.user.setActivity(setInterval(function() {
-        bot.user.setActivity(games[Math.floor(Math.random() * games.length)], {url:"https://www.twitch.tv/BotHelp2.0", type: "STREAMING"})
-    }, 3000))
+client.on('ready' , function (){
+	client.user.setActivity(`.help | client.users.size + "utilisateur"`)
+	console.log("prêt frr")
 });
 
 client.on('message',function(message){
